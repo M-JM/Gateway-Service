@@ -14,8 +14,8 @@ public class RouterValidator {
             "/users/generate-token",
             "/users/signup",
             "/users/test",
-            "/domein/test",
-            "/profielen/Studenten"
+            "/domein/test"
+
     );
 
     public Predicate<ServerHttpRequest> isSecured =
