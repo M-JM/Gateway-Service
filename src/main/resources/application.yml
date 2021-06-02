@@ -19,7 +19,12 @@ spring:
             allowedOrigins : "http://localhost:4200"
             allowedHeaders:
                "*"
-
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
       routes:
         - id: profielen-service
           uri: lb://PROFIELEN-SERVICE

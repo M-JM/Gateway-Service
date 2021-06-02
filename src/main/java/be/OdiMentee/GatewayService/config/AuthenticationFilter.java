@@ -65,7 +65,4 @@ public class AuthenticationFilter implements GatewayFilter {
                 .build();
     }
 
-
-
-
 }
