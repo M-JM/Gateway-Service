@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: profielen-service
+          uri: lb://PROFIELEN-SERVICE
+          predicates:
+            - Path=/profielen/**
+        - id: domein-service
+          uri: lb://DOMEIN-SERVICE
+          predicates:
+            - Path=/domein/**
+
+jwt:
+   secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
+   expiration: 86400
