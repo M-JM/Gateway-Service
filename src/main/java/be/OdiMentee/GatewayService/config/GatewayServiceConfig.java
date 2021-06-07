@@ -30,6 +30,9 @@ public class GatewayServiceConfig {
                 .route("auth-service", r -> r.path("/users/**")
                         .filters(f -> f.filter(filter))
                         .uri("lb://AUTH-SERVICE"))
+                .route("mentorships-service", r -> r.path("/mentorships/**")
+                        .filters(f -> f.filter(filter))
+                        .uri("lb://MENTORSHIPS-SERVICE"))
                 .build();
     }
 

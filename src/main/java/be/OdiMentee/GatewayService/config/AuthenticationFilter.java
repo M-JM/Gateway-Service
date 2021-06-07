@@ -51,7 +51,6 @@ public class AuthenticationFilter implements GatewayFilter {
     }
 
     private boolean isAuthMissing(ServerHttpRequest request) {
-        System.out.println("testing Is missing" );
         var x = !request.getHeaders().containsKey("Authorization");
         return x;
 
